@@ -41,7 +41,7 @@
         console.log("Sahte log gönderildi! HTTP status:", res.status);
         return res;
       }).catch((e) => {
-        console.error("❌ Fetch hatası:", e);
+        console.error(" Fetch hatası:", e);
       });
     }
   }
